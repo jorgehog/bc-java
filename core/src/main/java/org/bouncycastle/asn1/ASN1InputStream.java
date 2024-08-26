@@ -539,6 +539,8 @@ public class ASN1InputStream
                 return ASN1IA5String.createPrimitive(defIn.toByteArray());
             case INTEGER:
                 return ASN1Integer.createPrimitive(defIn.toByteArray());
+            case REAL:
+                return ASN1Real.createPrimitive(defIn.toByteArray());
             case NULL:
                 return ASN1Null.createPrimitive(defIn.toByteArray());
             case NUMERIC_STRING:

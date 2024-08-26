@@ -17,6 +17,7 @@ import org.bouncycastle.asn1.ASN1ObjectIdentifier;
 import org.bouncycastle.asn1.ASN1OctetString;
 import org.bouncycastle.asn1.ASN1Primitive;
 import org.bouncycastle.asn1.ASN1PrintableString;
+import org.bouncycastle.asn1.ASN1Real;
 import org.bouncycastle.asn1.ASN1RelativeOID;
 import org.bouncycastle.asn1.ASN1Sequence;
 import org.bouncycastle.asn1.ASN1Set;
@@ -178,6 +179,10 @@ public class ASN1Dump
         else if (obj instanceof ASN1Boolean)
         {
             buf.append(indent + "Boolean(" + ((ASN1Boolean)obj).isTrue() + ")" + nl);
+        }
+        else if (obj instanceof ASN1Real)
+        {
+            buf.append(indent + "Real(" + ((ASN1Real) obj).toHexString() + ")" + nl); // FIXME String repr
         }
         else if (obj instanceof ASN1Integer)
         {
